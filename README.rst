@@ -4,8 +4,8 @@ Python IProfile CLI
 
 |build| |coverage| |health|
 
-.. |build| image:: https://travis-ci.org/victorfsf/pickleclip.svg?branch=master
-    :target: https://travis-ci.org/victorfsf/pickleclip
+.. |build| image:: https://circleci.com/gh/victorfsf/pickleclip/tree/master.svg?style=shield
+    :target: https://circleci.com/gh/victorfsf/pickleclip
     :alt: Build Status
 
 .. |coverage| image:: https://coveralls.io/repos/github/victorfsf/pickleclip/badge.svg?branch=master
