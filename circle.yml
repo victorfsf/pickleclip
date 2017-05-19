@@ -1,5 +1,8 @@
 machine:
+  python:
+    version: 2.7.13
   post:
+    - pyenv install 2.7.13 3.4 3.5 3.6.1
     - pyenv global 2.7.13 3.4 3.5 3.6.1
 
 dependencies:
