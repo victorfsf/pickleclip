@@ -12,7 +12,11 @@ setup(
     package_data={
         'pickleclip': [],
     },
-    install_requires=[],
+    install_requires=[
+        'pyperclip>=1.5.27',
+        'six>=1.10.0',
+        'dill>=0.2.6'
+    ],
     zip_safe=False,
     version=version,
     description='Simple clipboard tool for Python pickled objects.',
