@@ -6,11 +6,9 @@ python:
   - "3.5"
   - "3.6"
 
-dist: trusty
-
 install:
   - sudo apt-get update -qq
-  - sudo apt-get install -qqy xclip
+  - "sudo apt-get install xclip xsel --no-install-recommends --yes"
   - pip install -r requirements.txt
   - pip install -r requirements.test.txt
 
