@@ -48,7 +48,7 @@ Pickleclip will copy any python object supported by pickle (or dill) into your c
 
 ### Copying from Python 3 to Python 2 using pickle
 
-There are some known compatibility problems with copying and pasting code from Python 3 to Python 2, which can be resolved by using the `protocol` kwarg:
+There are some known compatibility problems with copying and pasting code from Python 3 to Python 2, but some of those problems can be solved by using the `protocol` kwarg:
 
 ##### Python 3 shell:
 
