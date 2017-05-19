@@ -27,7 +27,7 @@ In [3]: picklec.paste()
 Out[3]: {'hello': 'world'}
 ```
 
-To copy functions, use deepcopy/deeppaste (it'll use [dill](https://github.com/uqfoundation/dill) instead of pickle):
+To copy functions, use dillcopy/dillpaste (it'll use [dill](https://github.com/uqfoundation/dill) instead of pickle):
 
 ```python
 In [1]: import pickleclip as picklec
@@ -35,13 +35,40 @@ In [1]: import pickleclip as picklec
 In [2]: def add(x, y):
    ...:     return x + y
 
-In [3]: picklec.deepcopy(add)
+In [3]: picklec.dillcopy(add)
 
-In [4]: picklec.paste()
+In [4]: picklec.dillpaste()
 Out[4]: <function __main__.add>
 
-In [5]: picklec.paste()(5, 10)
+In [5]: picklec.dillpaste()(5, 10)
 Out[5]: 15
 ```
 
-Pickleclip will copy any python object supported by pickle or dill into your clipboard. You can paste it anywhere you'd like (in another shell, for instance), as long as you use the `pickleclip.paste` or `pickleclip.deeppaste` function.
+Pickleclip will copy any python object supported by pickle (or dill) into your clipboard. You can paste it anywhere you'd like (in another shell, for instance), as long as you use the `pickleclip.paste` function.
+
+### Copy from Python 3 to Python 2 using pickle
+
+There are some known compatibility problems with copying and pasting code from Python 3 to Python 2, which can be resolved by using the `protocol` kwarg:
+
+##### Python 3 shell:
+
+```python
+In [1]: import pickleclip as picklec
+
+In [2]: picklec.copy({'hello': 'world'}, protocol=2)
+```
+
+##### Python 2 shell:
+
+```python
+In [1]: import pickleclip as picklec
+
+In [2]: picklec.paste()
+Out[2]: {'hello': 'world'}
+```
+
+Since the PY2's pickle version can't handle the PY3's protocol number (which is 3), you'll need to force the PY3 pickle to use `protocol = 2`.
+
+### Copy from different Python versions using dill
+
+It'll work fine with basic objects (strings, lists, sets, dicts), but it won't work with functions/objects.
