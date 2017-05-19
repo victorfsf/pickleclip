@@ -20,6 +20,10 @@ lib64/
 parts/
 sdist/
 var/
+<<<<<<< HEAD
+=======
+wheels/
+>>>>>>> 01dc3605361c82f5c9e192c87134210efb93856c
 *.egg-info/
 .installed.cfg
 *.egg
@@ -42,7 +46,11 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
+<<<<<<< HEAD
 *,cover
+=======
+*.cover
+>>>>>>> 01dc3605361c82f5c9e192c87134210efb93856c
 .hypothesis/
 
 # Translations
@@ -51,6 +59,17 @@ coverage.xml
 
 # Django stuff:
 *.log
+<<<<<<< HEAD
+=======
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+>>>>>>> 01dc3605361c82f5c9e192c87134210efb93856c
 
 # Sphinx documentation
 docs/_build/
@@ -58,5 +77,40 @@ docs/_build/
 # PyBuilder
 target/
 
+<<<<<<< HEAD
 #Ipython Notebook
 .ipynb_checkpoints
+=======
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+>>>>>>> 01dc3605361c82f5c9e192c87134210efb93856c
