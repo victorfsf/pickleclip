@@ -10,3 +10,12 @@ def test_copy_paste():
     ]
     picklec.copy(obj)
     assert picklec.paste() == obj
+
+
+def test_deep_copy_paste():
+    obj = [
+        {'this': 'is', 'a': 'test'},
+        (1, 2, {3, 4}), object
+    ]
+    picklec.copy(obj)
+    assert picklec.paste() == obj
