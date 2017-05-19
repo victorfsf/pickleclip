@@ -1,0 +1,26 @@
+language: python
+
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+
+os:
+  - linux
+  - osx
+  - windows
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]] then; sudo apt-get update -qq; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]] then; sudo apt-get install -qqy xclip; fi
+
+install:
+  - pip install -r requirements.txt
+  - pip install -r requirements.test.txt
+
+script:
+  - make test
+
+after_script:
+  - coveralls
