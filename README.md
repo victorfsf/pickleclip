@@ -27,7 +27,7 @@ In [3]: picklec.paste()
 Out[3]: {'hello': 'world'}
 ```
 
-To copy functions, use dillcopy/dillpaste (it'll use [dill](https://github.com/uqfoundation/dill) instead of pickle):
+To copy functions or any object that the native pickle package can't handle, use dillcopy/dillpaste (it'll use [dill](https://github.com/uqfoundation/dill) instead of pickle):
 
 ```python
 In [1]: import pickleclip as picklec
@@ -71,4 +71,4 @@ Since the PY2's pickle version can't handle the PY3's protocol number (which is 
 
 ### Copying from different Python versions using dill
 
-It'll work fine with basic objects (strings, lists, sets, dicts), but it won't work with functions/objects.
+It should work fine with basic objects (str, int, float, list, set, dict...), but it won't work with nothing too "fancy", (functions, custom objects...).
