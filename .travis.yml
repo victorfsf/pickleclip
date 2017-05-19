@@ -9,11 +9,10 @@ python:
 os:
   - linux
   - osx
-  - windows
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]] then; sudo apt-get update -qq; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]] then; sudo apt-get install -qqy xclip; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then; sudo apt-get update -qq; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then; sudo apt-get install -qqy xclip; fi
 
 install:
   - pip install -r requirements.txt
