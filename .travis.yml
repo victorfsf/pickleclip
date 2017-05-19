@@ -6,8 +6,7 @@ python:
   - "3.5"
   - "3.6"
 
-os:
-  - linux
+dist: trusty
 
 install:
   - sudo apt-get update -qq
