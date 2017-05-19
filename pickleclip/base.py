@@ -7,20 +7,18 @@ import pyperclip
 import six
 
 
-def copy(obj, protocol=None, deep=False):
+def copy(obj, protocol=None, serializer=pickle):
     protocol = protocol or (2 if six.PY2 else 3)
-    dump_fn = dill.dumps if deep else pickle.dumps
-    dump = dump_fn(obj, protocol=protocol)
+    dump = serializer.dumps(obj, protocol=protocol)
     pyperclip.copy(dump.decode('latin1'))
 
 
-def paste(deep=False):
+def paste(serializer=pickle):
     obj = six.binary_type(
         pyperclip.paste().encode('latin1')
     )
-    loads_fn = dill.loads if deep else pickle.loads
-    return loads_fn(obj)
+    return serializer.loads(obj)
 
 
-deepcopy = partial(copy, deep=True)
-deeppaste = partial(paste, deep=True)
+dillcopy = partial(copy, serializer=dill)
+dillpaste = partial(paste, serializer=dill)
