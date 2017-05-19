@@ -1,0 +1,14 @@
+machine:
+  post:
+    - pyenv global 2.7.13 3.4 3.5 3.6.1
+
+dependencies:
+  pre:
+    - pip install -r requirements.txt
+    - pip install -r requirements.test.txt
+
+test:
+  override:
+    - make test
+  post:
+    - coveralls
