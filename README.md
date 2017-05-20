@@ -2,7 +2,6 @@
 
 [![PyPI version](https://badge.fury.io/py/pickleclip.svg)](https://badge.fury.io/py/pickleclip)
 [![Build Status](https://circleci.com/gh/victorfsf/pickleclip/tree/master.svg?style=shield)](https://circleci.com/gh/victorfsf/pickleclip)
-[![Coverage Status](https://coveralls.io/repos/github/victorfsf/pickleclip/badge.svg?branch=master)](https://coveralls.io/github/victorfsf/pickleclip?branch=master)
 [![Code Health](https://landscape.io/github/victorfsf/pickleclip/master/landscape.svg?style=flat)](https://landscape.io/github/victorfsf/pickleclip/master)
 
 *A Simple clipboard tool for Python (2.7+ and 3.4+) pickled objects.*
