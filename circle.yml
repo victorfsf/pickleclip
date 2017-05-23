@@ -1,0 +1,16 @@
+machine:
+  python:
+    version: 2.7.13
+
+dependencies:
+  pre:
+    - sudo apt-get update -qq
+    - sudo apt-get install xclip -y
+    - pip install -r requirements.txt
+    - pip install -r requirements.test.txt
+
+test:
+  override:
+    - make test
+  post:
+    - coveralls

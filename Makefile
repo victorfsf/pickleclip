@@ -12,13 +12,16 @@ requirements:
 requirements.test:
 	@pip install -r requirements.test.txt
 
+requirements.pypi:
+	@pip install -r requirements.pypi.txt
+
 test:
 	@rm -rf .coverage
 	@rm -rf htmlcov/
 	@pytest --cov=pickleclip --cov-report term --cov-report html \
 				  --cov-config .coveragerc tests/
 
-setup: clean requirements test.html
+setup: clean requirements test
 
 clean.build:
 	@rm -rd build/ ||:
@@ -29,11 +32,7 @@ dist: clean.build
 	@python setup.py sdist
 	@python setup.py bdist_wheel --universal
 
-register:
-	@twine register dist/*.tar.gz
-	@twine register dist/*.whl
-
 upload:
 	@twine upload dist/*
 
-pypi: dist register upload
+pypi: dist upload
