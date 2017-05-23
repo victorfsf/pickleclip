@@ -9,7 +9,6 @@ def dump(path, mode='wb'):
         f.write(
             pyperclip.paste().encode('latin1')
         )
-    return path
 
 
 def load(path, mode='rb', fn=paste):
