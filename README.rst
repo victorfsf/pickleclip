@@ -1,5 +1,5 @@
 ===================
-Python IProfile CLI
+Pickleclip
 ===================
 
 |build| |coverage| |health|
