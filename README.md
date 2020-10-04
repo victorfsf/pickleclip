@@ -53,7 +53,11 @@ Pickleclip will copy any python object supported by pickle (or dill) into your c
 
 ### Copying from Python 3 to Python 2 using pickle
 
-There are some known compatibility problems with copying and pasting code from Python 3 to Python 2, but some of those problems can be solved by using the `protocol` kwarg:
+To get Python 3 objects to unpickle on Python 2, specify `protocol=2` when copying. Although pickle will try to map the new Python 3 names to the old module names used in Python 2, so that the pickle data stream is readable with Python 2, this does not come without limitations.
+
+Going from Python 2 to Python 3 is even less trivial, and will mostly only work for the simplest cases. See also [pickle-compat](https://pypi.org/project/pickle-compat/).
+
+By default, the highest [pickle protocol](https://docs.python.org/3/library/pickle.html#pickle-protocols) available to the interpreter is used. The higher the protocol used, the more recent the version of Python needed to read the pickle produced.
 
 ##### Python 3 shell:
 
@@ -71,8 +75,6 @@ In [1]: import pickleclip as picklec
 In [2]: picklec.paste()
 Out[2]: {'hello': 'world'}
 ```
-
-Since the PY2's pickle version can't handle the PY3's protocol number (which is 3), you'll need to force the PY3 pickle to use `protocol = 2`.
 
 ### Copying from different Python versions using dill
 

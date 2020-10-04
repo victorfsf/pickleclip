@@ -7,8 +7,7 @@ import pyperclip
 import six
 
 
-def copy(obj, protocol=None, serializer=pickle):
-    protocol = protocol or (2 if six.PY2 else 3)
+def copy(obj, protocol=-1, serializer=pickle):
     dump = serializer.dumps(obj, protocol=protocol)
     pyperclip.copy(dump.decode('latin1'))
 
