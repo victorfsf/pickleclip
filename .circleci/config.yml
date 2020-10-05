@@ -10,6 +10,7 @@ jobs:
           command: |
             sudo pip install -r requirements.txt
             sudo pip install -r requirements.test.txt
-      - run: sudo apt install -y xclip
       - run:
-          command: make test
+          command: |
+            sudo apt install -y xclip
+            make test
