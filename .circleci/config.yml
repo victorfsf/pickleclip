@@ -12,5 +12,5 @@ jobs:
             sudo pip install -r requirements.test.txt
       - run:
           command: |
-            sudo apt install -y xclip
+            sudo apt install -y xclip xsel
             make test
