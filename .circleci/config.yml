@@ -10,7 +10,7 @@ jobs:
           command: |
             sudo pip install -r requirements.txt
             sudo pip install -r requirements.test.txt
+      - run: sudo apt install -y xclip xsel
       - run:
           command: |
-            sudo apt install -y xclip xsel
             make test
